@@ -1,1 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<style>
+body{
+  background-image: url(https://64.media.tumblr.com/1009d7d8ba3794ee0222215eaf42b573/9554a605a326738a-8b/s1280x1920/bcda22a7b7fcb8abcfcb66598fcad84737ee2a24.gif);
+  background-size: cover;
+}
+.container {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10vw;
+}
 
+.filterDiv {
+  background-color: #d591e2;
+  color: #ffffff;
+  width: 10vw;
+  line-height: 5vw;
+  text-align: center;
+  margin: 0.5vw;
+  display: none; 
+}
+
+.show {
+  display: block;
+}
+
+.btn {
+  border: none;
+  padding: 1vw 2vw;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+
+.buttonc {
+  margin-top: 5vw;
+  margin-left: 35vw;
+}
+</style>
+</head>
+<body>
+  
+  <div class="container">
+    <div class="filterDiv words">candle</div>
+    <div class="filterDiv letters">n</div>
+    <div class="filterDiv letters">y</div>
+    <div class="filterDiv numbers">2077</div>
+    <div class="filterDiv letters">k</div>
+    <div class="filterDiv words">mirror</div>
+    <div class="filterDiv numbers">17</div>
+    <div class="filterDiv words">sun</div>
+    <div class="filterDiv letters">m</div>
+    <div class="filterDiv numbers">8</div>
+    <div class="filterDiv numbers">21</div>
+  </div>
+
+  <div id="myBtnContainer" class = "buttonc">
+    <button class="btn" onclick="filterSelection('all')"> all </button>
+    <button class="btn" onclick="filterSelection('words')"> words</button>
+    <button class="btn" onclick="filterSelection('letters')"> letters</button>
+    <button class="btn" onclick="filterSelection('numbers')"> numbers</button>
+  </div>
+
+  <script>
+    filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    remove(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) add(x[i], "show");
+  }
+}
+
+function add(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+function remove(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+  </script>
+</body>
+
+</html>
