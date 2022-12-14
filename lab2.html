@@ -1,0 +1,83 @@
+<html>
+
+   <head>
+
+      <title>Second lab</title>
+
+      <style>
+         .border {
+            border-color:black; border-style: solid;
+         }
+         .borderradius {
+            border-radius: 10px;
+         }
+         .yellow {
+            background-color: yellow;
+         }
+         .padding {
+            padding: 20px;
+         }
+         .margin {
+            margin: 20px;
+         }
+         .marginstyle {
+            border-color: black; border-top-style: dotted; 
+            border-top-color: green; border-bottom-style: dashed; border-bottom-color: red;
+         }
+         .round {
+            padding:15px; 
+            border-radius: 50%;
+         }
+         .circle {
+            width: 50px; 
+            height: 50px;
+            text-align: center;
+         }
+         .inlineblock {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            padding: 20px;
+            background-color: red;
+            text-align: center;
+         }
+         .inline {
+            display: inline;
+            margin-right: 5px;
+         }
+
+      </style>
+
+   </head>
+
+   <body>
+
+
+      <b>
+
+      <div style  = "color: red" > My color is red </div>
+      <div style  = "color: red" > My color is red too </div>
+      <div style  = "color: rgba(255, 0, 0, 0.5)" > My color is rgba red </div>
+      <div style  = "color: #FF0000" > My color is hex red </div>
+      <div style  = "background-color: red" > My background color is red </div> 
+   
+      </b>
+      <div class = "padding"></div>
+      <div class  = "border yellow padding"> I have padding </div>
+      <div class  = "margin yellow marginstyle"> I have margin</div>
+      <div class  = "yellow border borderradius" > I am little rounded</div>
+      <div class  = "yellow border round"> I am fully rounded</div>
+      <div class  = "yellow round circle border"> I am circle</div>
+
+      <span style = "color: green; text-decoration: underline;"> I am inline </span>
+      <span> I am inline too </span>
+      <div style  = "color: green"> I was a tag </div>
+      <div class  = "yellow inline"> I am an inline div </div>
+      <span class  = " inlineblock " > Inline block </span>
+
+      <div> Left text</div>
+      <div style = " text-align: center " > Center text </div>
+
+   </body>
+
+</html>
